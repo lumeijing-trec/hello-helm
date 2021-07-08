@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-app
-        image: gcr.io/hello-nuxt-317000/hello-app:v1
+        image: asia.gcr.io/windows-vue-to-the-cloud/windows-vue:0b35f6d
         ports:
-        - containerPort: 8080
+        - containerPort: 80
