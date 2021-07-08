@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-app-deployment
+  name: {{ .Values.appname }}-deployment
   labels:
-    app: hello-app
+    app: {{ .Values.appname }}
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: hello-app
+      app: {{ .Values.appname }}
   template:
     metadata:
       labels:
-        app: hello-app
+        app: {{ .Values.appname }}
     spec:
       containers:
-      - name: hello-app
+      - name: {{ .Values.appname }}
         image: asia.gcr.io/windows-vue-to-the-cloud/windows-vue:0b35f6d
         ports:
-        - containerPort: 80
+        - containerPort: {{ .Values.appport }}
